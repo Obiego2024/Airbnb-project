@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
 import myimg from "../../assets/Frame 6 (9).jpg";
@@ -31,7 +31,7 @@ const myList3 = [
   { location: "Rio de Janeiro, Brazil", description: "Beachfront apartment", price: "£2,300 total", rating: 4.7, image: myimg10, date: "15–20 Jul · Individual Host" },
 ];
 
-const CarouselComponent = ({ items }) => {
+const CarouselComponent = ({ items }: { items: { location: string; description: string; price: string; rating: number; image: string; date: string }[] }) => {
   return (
     <Carousel
       showThumbs={false}

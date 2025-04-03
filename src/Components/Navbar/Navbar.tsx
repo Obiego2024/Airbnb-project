@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { Link, } from "react-router-dom";
 import {
-  ArrowRight,
   Menu,
   X,
   Filter,
@@ -48,7 +47,7 @@ function Navbar() {
     setIsLanguageMenuOpen(!isLanguageMenuOpen);
   };
 
-  const myLocation = useLocation();
+  
   return (
     <div>
 {/* Navbar Section */}

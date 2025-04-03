@@ -20,7 +20,7 @@ const myList = [
   { location: "Half Moon Bay, California, US", description: "Beach and ocean views", price: "£1,634 total", rating: 5.0, image: myimg7, date: "22–27 Oct · Individual Host" },
 ];
 
-const CarouselComponent = ({ items }) =>{
+const CarouselComponent = ({ items }: { items: { location: string; description: string; price: string; rating: number; image: string; date: string }[] }) => {
   return (
     <div className="mx-4">
       <h1 className="text-center text-4xl text-red-400 font-bold capitalize my-6 animate-bounce">property for sale</h1>

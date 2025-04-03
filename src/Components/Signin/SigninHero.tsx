@@ -1,22 +1,35 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import backgroundImage from "../../assets/house1.jpg";
 
+// Define types for form data and errors
+interface FormData {
+  email: string;
+  password: string;
+}
+
+interface Errors {
+  email?: string;
+  password?: string;
+}
+
 function SigninHero() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     email: "",
     password: "",
   });
 
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<Errors>({});
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
+  // Handle input changes
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const validateForm = () => {
-    let newErrors = {};
+  // Validate form inputs
+  const validateForm = (): Errors => {
+    let newErrors: Errors = {};
     if (!formData.email.trim()) {
       newErrors.email = "Email is required.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -30,7 +43,8 @@ function SigninHero() {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  // Handle form submission
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const validationErrors = validateForm();
     if (Object.keys(validationErrors).length === 0) {
@@ -42,15 +56,14 @@ function SigninHero() {
       setErrors(validationErrors);
     }
   };
+
   return (
     <div
       className="min-h-screen bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      <div className="max-w-lg mx-auto p-6 shadow-md rounded-lg">
-        <h2 className="text-4xl font-bold text-center mb-6 animate-ping">
-          Sign In
-        </h2>
+      <div className="max-w-lg mx-auto p-6 shadow-md shadow-fuchsia-400 rounded-lg bg-white mt-20">
+        <h2 className="text-4xl font-bold text-center mb-6">Sign In</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Email Field */}
           <div>
@@ -60,7 +73,7 @@ function SigninHero() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full mt-1 p-2 border border-red-300 rounded-md"
+              className="w-full mt-1 p-2 border border-gray-800 rounded-md"
               placeholder="Enter your email"
             />
             {errors.email && (
@@ -76,7 +89,7 @@ function SigninHero() {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full mt-1 p-2 border border-red-300 rounded-md"
+              className="w-full mt-1 p-2 border border-gray-800 rounded-md"
               placeholder="Enter your password"
             />
             {errors.password && (
@@ -94,7 +107,7 @@ function SigninHero() {
         </form>
       </div>
     </div>
-  )
+  );
 }
 
-export default SigninHero
+export default SigninHero;

@@ -1,6 +1,3 @@
-import React from 'react';
-import image from '../../assets/Frame 6 (2).jpg'
-import image1 from '../../assets/Frame 6 (14).jpg'
 import { FaFacebook,FaInstagram, FaTwitter, } from "react-icons/fa";
 import backgroundImage from '../../assets/facade-min-1536x1155.webp';
 
@@ -49,7 +46,3 @@ function Hero() {
 }
 
 export default Hero
-
-
-
-

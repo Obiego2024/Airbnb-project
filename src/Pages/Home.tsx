@@ -1,4 +1,4 @@
-import React from 'react'
+
 import HomeHero from '../Components/Home/HomeHero'
 import Navbar from '../Components/Navbar/Navbar'
 import MainFooter from '../Components/MainFooter'
