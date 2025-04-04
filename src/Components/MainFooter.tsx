@@ -5,8 +5,8 @@ function MainFooter() {
     <footer className="bg-gray-100 text-gray-600 text-sm p-10 mx-8 mt-8">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <h2 className="text-xl font-semibold mb-4">Inspiration for future getaways</h2>
-        <div className="flex space-x-4 mb-6 border-b pb-2">
+        <h2 className="text-2xl font-semibold mb-4">Inspiration for future getaways</h2>
+        <div className="flex space-x-4 mb-6 border-b pb-2 overflow-auto">
           <span className="font-semibold text-black border-b-2 border-black">Popular</span>
           <span>Historic</span>
           <span>Coastal</span>
